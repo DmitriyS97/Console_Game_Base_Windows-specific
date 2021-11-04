@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arkanoid.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="ExampleGame.cpp" />
     <ClCompile Include="main.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arkanoid.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="ExampleGame.h" />
     <ClInclude Include="PaintDevice.h" />

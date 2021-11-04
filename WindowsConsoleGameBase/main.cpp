@@ -1,7 +1,8 @@
-#include "ExampleGame.h"
+//#include "ExampleGame.h"
+#include "Arkanoid.h"
 using namespace std;
 
 int main() {
-	ExampleGame game;
+	Arkanoid game;
 	return static_cast<int>(game.run());
 }
