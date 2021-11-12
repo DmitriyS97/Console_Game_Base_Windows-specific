@@ -3,6 +3,5 @@
 
 int main() {
 	Arkanoid game;
-	return static_cast<int>(game.run());
-	
+	return static_cast<int>(game.run());	
 }

@@ -140,13 +140,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arkanoid.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="ExampleGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PaintDevice.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Size.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arkanoid.h" />
