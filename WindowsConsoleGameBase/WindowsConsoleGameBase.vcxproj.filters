@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Examples">
       <UniqueIdentifier>{d4b97f01-b61a-4531-a9b5-ad562bc7c946}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Arkanoid">
+      <UniqueIdentifier>{65a0a180-e5db-417b-885a-f9ce7b872818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arkanoid">
+      <UniqueIdentifier>{7ea27312-79e2-4163-93c7-0ee0683c0331}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +54,21 @@
     <ClCompile Include="ExampleGame.cpp">
       <Filter>Source Files\Examples</Filter>
     </ClCompile>
+    <ClCompile Include="Arkanoid.cpp">
+      <Filter>Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>Source Files\Arkanoid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -67,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="ExampleGame.h">
       <Filter>Header Files\Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Arkanoid.h">
+      <Filter>Header Files\Arkanoid</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
