@@ -6,11 +6,11 @@
 class Ball
 {
 public:	
+	Ball();
 	void render(PaintDevice& paintDevice);	
 	void move();
 	Vector2 m_Position;	
-	int m_xDir = 1;
-	int m_yDir = -1;	
+	Vector2 m_ballDir;
 };
 
 class Platform
@@ -26,7 +26,7 @@ public:
 class Brick
 {
 public:
-	Brick(size_t width, size_t height);
+	Brick(size_t width, size_t height);	
 	void render(PaintDevice& paintDevice);
 	bool hit(Vector2 point);
 	void remove(Vector2 point);
@@ -39,8 +39,7 @@ private:
 class Wall
 {
 public:
-	Wall(size_t width, size_t height);
-	bool hit(Vector2 point);
+	Wall(size_t width, size_t height);	
 	void render(PaintDevice& paintDevice);
 private:
 	

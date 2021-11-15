@@ -12,7 +12,7 @@ Brick::Brick(size_t width, size_t height) : m_Width(width), m_Height(height)
 			m_Bricks.push_back(Vector2(j, i));
 			if (j <= 1) check = true;
 		}
-		if (check == true) {
+		if (check) {
 			start += 2;
 			end -= 2;
 		}
@@ -34,10 +34,8 @@ bool Brick::hit(Vector2 point) {
 
 void Brick::remove(Vector2 point) {
 	for (int i = 0; i < m_Bricks.size(); i++) {
-		if (point.x() == m_Bricks[i].x() && point.y() == m_Bricks[i].y()) {
-			for (int j = i; j < m_Bricks.size() - 1; j++) {
-				m_Bricks[j] = m_Bricks[j + 1];
-			}
+		if (point == m_Bricks[i]) {
+			std::swap(m_Bricks[i], m_Bricks.back());
 			m_Bricks.pop_back();
 			return;
 		}

@@ -10,39 +10,37 @@ void Arkanoid::render(PaintDevice& paintDevice) {
 void Arkanoid::update(const int dt)
 {	
 	m_Lag += dt;
-	const int quant = 250;
+	const int quant = 200;
 	if (m_Lag <= quant) return;
-	m_Lag -= quant;	
-
-	Vector2 curBallDir(m_Ball.m_xDir, m_Ball.m_yDir);
+	m_Lag -= quant;		
 
 	if ((m_Ball.m_Position.x() - 1 == 0 && m_Ball.m_Position.y() - 1 == 0)
 		|| (m_Ball.m_Position.x() + 1 == m_Width - 1 && m_Ball.m_Position.y() - 1 == 0))
 	{
-		m_Ball.m_xDir *= -1;
-		m_Ball.m_yDir *= -1;
+		m_Ball.m_ballDir.x() *= -1;
+		m_Ball.m_ballDir.y() *= -1;
 	}
-	else if (m_Ball.m_Position.x() + 1 == m_Width - 1 || m_Ball.m_Position.x() - 1 == 0) m_Ball.m_xDir *= -1;
-	else if (m_Ball.m_Position.y() - 1 == 0) m_Ball.m_yDir *= -1;
+	else if (m_Ball.m_Position.x() + 1 == m_Width - 1 || m_Ball.m_Position.x() - 1 == 0) m_Ball.m_ballDir.x() *= -1;
+	else if (m_Ball.m_Position.y() - 1 == 0) m_Ball.m_ballDir.y() *= -1;
 	
-	if (m_Platform.hit(m_Ball.m_Position + curBallDir)) m_Ball.m_yDir *= -1;
+	if (m_Platform.hit(m_Ball.m_Position + m_Ball.m_ballDir)) m_Ball.m_ballDir.y() *= -1;
 
 	bool check = true;
 	
 	if (m_Bricks.hit(m_Ball.m_Position + Vector2(-1, 0)) || m_Bricks.hit(m_Ball.m_Position + Vector2(1, 0)))
 	{
-		m_Ball.m_xDir *= -1;
+		m_Ball.m_ballDir.x() *= -1;
 		check = false;
 	}
 	if (m_Bricks.hit(m_Ball.m_Position + Vector2(0,-1)) || m_Bricks.hit(m_Ball.m_Position + Vector2(0, 1)))  
 	{
-		m_Ball.m_yDir *= -1;
+		m_Ball.m_ballDir.y() *= -1;
 		check = false;
 	}
-	if (check == true && (m_Bricks.hit(m_Ball.m_Position + curBallDir)))
+	if (check && (m_Bricks.hit(m_Ball.m_Position + m_Ball.m_ballDir)))
 	{
-		m_Ball.m_xDir *= -1;
-		m_Ball.m_yDir *= -1;
+		m_Ball.m_ballDir.x() *= -1;
+		m_Ball.m_ballDir.y() *= -1;
 	}
 
 	m_Ball.move();

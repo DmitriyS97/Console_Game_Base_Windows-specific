@@ -14,7 +14,3 @@ void Wall::render(PaintDevice& paintDevice)
 	paintDevice.set_char(Vector2(0, 0), 0x2554);
 	paintDevice.set_char(Vector2(m_Width - 1, 0), 0x2557);
 }
-bool Wall::hit(Vector2 point) {
-
-	return false;
-}
